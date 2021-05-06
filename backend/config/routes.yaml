@@ -1,3 +1,146 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+bateau_admin:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index
+
+bateau_index:
+    path: /
+    controller: App\Controller\PresentationController::index
+
+bateau_menu:
+    path: /carte/
+    controller: App\Controller\MenuController::index
+
+bateau_alcools:
+    path: /alcools/
+    controller: App\Controller\AlcoolController::show
+
+bateau_alcool_item:
+    path: /alcools/{name}
+    controller: App\Controller\AlcoolController::item
+    requirements:
+        name: '\w+'
+
+bateau_cocktails:
+    path: /cocktails/
+    controller: App\Controller\CocktailController::show
+
+bateau_cocktail_item:
+    path: /cocktails/{name}
+    controller: App\Controller\CocktailController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_draftbeers:
+    path: /drafts/
+    controller: App\Controller\DraftController::show
+
+bateau_draftbeer_item:
+    path: /drafts/{name}
+    controller: App\Controller\DraftController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_events:
+    path: /events/
+    controller: App\Controller\EventController::show
+
+bateau_event_item:
+    path: /events/{name}
+    controller: App\Controller\EventController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_foods:
+    path: /food/
+    controller: App\Controller\FoodController::show
+
+bateau_food_item:
+    path: /food/{name}
+    controller: App\Controller\FoodController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_photos:
+    path: /photos/
+    controller: App\Controller\PhotoController::show
+
+bateau_photo_item:
+    path: /photos/{name}
+    controller: App\Controller\PhotoController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_rums:
+    path: /rums/
+    controller: App\Controller\RumController::show
+
+bateau_rum_item:
+    path: /alcools/{name}
+    controller: App\Controller\RumController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_shots:
+    path: /shots/
+    controller: App\Controller\ShotController::show
+
+bateau_shot_item:
+    path: /shots/{name}
+    controller: App\Controller\ShotController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_softs:
+    path: /softs/
+    controller: App\Controller\SoftController::show
+
+bateau_soft_item:
+    path: /softs/{name}
+    controller: App\Controller\SoftController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_wines:
+    path: /wines/
+    controller: App\Controller\WineController::show
+
+bateau_wine_item:
+    path: /wines/{name}
+    controller: App\Controller\WineController::item
+    requirements:
+        name: '\w+'
+
+
+bateau_archives:
+    path: /archives/
+    controller: App\Controller\ArchiveController::show
+
+bateau_archive_item:
+    path: /archives/{name}
+    controller: App\Controller\ArchiveController::item
+    requirements:
+        name: '\w+'
+
+bateau_contact:
+    path: /contact/
+    controller: App\Controller\ContactController::contact
+
+bateau_infos:
+    path: /legacy/
+    controller: App\Controller\LegacyController::show
+
+bateau_newsletters:
+    path: /newsletter/
+    controller: App\Controller\NewsController::show
+
+bateau_booking:
+    path: /booking/
+    controller: App\Controller\BookingController::show
