@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{{ include('app/fragments/products/_body.html.twig', 
+		{
+			title_body:  title ,
+			image: asset("assets/images/bg-title-page-01.jpg"),
+			items:  products ,
+			happyhour: happyhour
+		})
+	}}
+{% endblock %}
