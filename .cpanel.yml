@@ -1,0 +1,4 @@
+deployment:
+    tasks:
+        - export DEPLOYPATH=/home/lami4945/public_html/lebato-ivre
+        - /bin/cp -R * $DEPLOYPATH
