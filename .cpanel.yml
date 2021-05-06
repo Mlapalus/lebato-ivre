@@ -1,4 +1,4 @@
 deployment:
     tasks:
-        - export DEPLOYPATH=/home/suzo1683/public_html/lebato-ivre
+        - export DEPLOYPATH=/home/szuo1683/public_html/lebato-ivre
         - /bin/cp -R * $DEPLOYPATH
