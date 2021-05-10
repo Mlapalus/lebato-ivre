@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookingController extends AbstractController
 {
-  public function show(): Response
+  public function index(): Response
   {
     return $this->render('app/booking.html.twig') ;
   }

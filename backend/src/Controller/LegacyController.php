@@ -6,9 +6,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LegacyController extends AbstractController
 {
-  public function show(): Response
+  public function index(): Response
   {
     return $this->render('app/legacy.html.twig') ;
   }
-
 }

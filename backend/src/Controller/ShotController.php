@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ShotController extends AbstractController
 {
-  public function show(ShotRepository $shotRepository): Response
+  public function index(ShotRepository $shotRepository): Response
   {
       $shots = $shotRepository->findAll();
       return $this->render('app/menu/shot.html.twig', [
@@ -16,7 +16,7 @@ class ShotController extends AbstractController
           'products' => $shots,
       ]) ;  }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }

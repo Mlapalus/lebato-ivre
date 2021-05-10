@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DraftController extends AbstractController
 {
-  public function show(DraftBeerRepository $draftrepository): Response
+  public function index(DraftBeerRepository $draftrepository): Response
   {
           $drafts = $draftrepository->findAll();
           return $this->render('app/menu/draft.html.twig', [
@@ -17,7 +17,7 @@ class DraftController extends AbstractController
           ]) ;
   }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }

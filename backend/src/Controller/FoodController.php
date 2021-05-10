@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FoodController extends AbstractController
 {
-  public function show(FoodRepository $foodRepository): Response
+  public function index(FoodRepository $foodRepository): Response
   {
       $foods = $foodRepository->findAll();
       return $this->render('app/menu/food.html.twig', [
@@ -16,7 +16,7 @@ class FoodController extends AbstractController
           'products' => $foods,
       ]) ;  }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }

@@ -10,5 +10,4 @@ class PresentationController extends AbstractController
   {
     return $this->render('app/presentation.html.twig') ;
   }
-
 }

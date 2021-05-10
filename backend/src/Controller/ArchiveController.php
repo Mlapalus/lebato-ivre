@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArchiveController extends AbstractController
 {
-  public function show(): Response
+  public function index(): Response
   {
     return $this->render('app/archive.html.twig') ;
   }

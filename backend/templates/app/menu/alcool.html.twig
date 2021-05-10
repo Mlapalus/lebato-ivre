@@ -1,12 +1,112 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	{{ include('app/fragments/products/_body.html.twig', 
-		{
-			title_body:  title ,
-			image: asset("assets/images/bg-title-page-01.jpg"),
-			items:  products ,
-			happyhour: happyhour
-		})
-	}}
+<section class="section-ourmenu bg2-pattern p-t-115 p-b-120">
+	<div class="container">
+		<div class="title-section-ourmenu t-center m-b-22">
+			<span class="tit2 t-center">
+				Découvrez
+			</span>
+
+			<h3 class="tit5 t-center m-t-2">
+				Nos Alcools
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div
+						class="col-sm-6">
+						<!-- Item our menu -->
+						<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+							<img
+							src="{{ asset('assets/images/our-menu-01.jpg') }}" alt="IMG-MENU">
+
+							<!-- Button2 -->
+							<a href="{{ path('bateau_premium_rhum') }}" class="btn2 flex-c-m txt5 ab-c-m size4">
+								Nos Rhums
+							</a>
+						</div>
+					</div>
+
+					<div
+						class="col-sm-6">
+						<!-- Item our menu -->
+						<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+							<img
+							src="{{ asset('assets/images/our-menu-05.jpg') }}" alt="IMG-MENU">
+
+							<!-- Button2 -->
+							<a href="{{ path('bateau_premium_vodka') }}" class="btn2 flex-c-m txt5 ab-c-m size5">
+								Nos Vodkas
+							</a>
+						</div>
+					</div>
+
+					<div
+						class="col-12">
+						<!-- Item our menu -->
+						<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+							<img
+							src="{{ asset('assets/images/our-menu-13.jpg') }}" alt="IMG-MENU">
+
+							<!-- Button2 -->
+							<a href="{{ path('bateau_premium_digestif') }}" class="btn2 flex-c-m txt5 ab-c-m size6">
+								Nos Digestifs
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="row">
+					<div
+						class="col-12">
+						<!-- Item our menu -->
+						<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+							<img
+							src="{{ asset('assets/images/our-menu-08.jpg') }}" alt="IMG-MENU">
+
+							<!-- Button2 -->
+							<a href="{{ path('bateau_premium_whisky') }}" class="btn2 flex-c-m txt5 ab-c-m size7">
+								Nos Whiskys
+							</a>
+						</div>
+					</div>
+
+					<div
+						class="col-12">
+						<!-- Item our menu -->
+						<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+							<img
+							src="{{ asset('assets/images/our-menu-10.jpg') }}" alt="IMG-MENU">
+
+							<!-- Button2 -->
+							<a href="{{ path('bateau_premium_gin') }}" class="btn2 flex-c-m txt5 ab-c-m size8">
+								Nos Gins
+							</a>
+						</div>
+					</div>
+
+					<div
+						class="col-12">
+						<!-- Item our menu -->
+						<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+							<img
+							src="{{ asset('assets/images/our-menu-16.jpg') }}" alt="IMG-MENU">
+
+							<!-- Button2 -->
+							<a href="{{ path('bateau_premium_tequila') }}" class="btn2 flex-c-m txt5 ab-c-m size9">
+								Nos Tequilas
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 {% endblock %}

@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RumController extends AbstractController
 {
-  public function show(RumRepository $rumRepository): Response
+  public function index(RumRepository $rumRepository): Response
   {
       $rums = $rumRepository->findAll();
       return $this->render('app/menu/rum.html.twig', [
@@ -16,7 +16,7 @@ class RumController extends AbstractController
           'products' => $rums,
       ]) ;  }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }

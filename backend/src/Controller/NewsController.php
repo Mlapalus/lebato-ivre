@@ -6,12 +6,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NewsController extends AbstractController
 {
-  public function show(): Response
+  public function index(): Response
   {
     return $this->render('app/news.html.twig') ;
   }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }

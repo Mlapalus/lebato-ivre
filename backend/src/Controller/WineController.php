@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class WineController extends AbstractController
 {
-  public function show(WineRepository $winerepository): Response
+  public function index(WineRepository $winerepository): Response
   {
       $wines = $winerepository->findAll();
       return $this->render('app/menu/wine.html.twig', [
@@ -16,7 +16,7 @@ class WineController extends AbstractController
           'products' => $wines,
       ]) ;  }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }

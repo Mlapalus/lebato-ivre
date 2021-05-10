@@ -23,6 +23,11 @@ class Shot
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="float")
      */
     private $price;
@@ -94,5 +99,25 @@ class Shot
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * Get the value of slug
+     */ 
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set the value of slug
+     *
+     * @return  self
+     */ 
+    public function setSlug($slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
     }
 }

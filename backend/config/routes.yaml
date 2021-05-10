@@ -12,120 +12,165 @@ bateau_menu:
 
 bateau_alcools:
     path: /alcools/
-    controller: App\Controller\AlcoolController::show
+    controller: App\Controller\AlcoolController::index
 
-bateau_alcool_item:
-    path: /alcools/{name}
-    controller: App\Controller\AlcoolController::item
+bateau_premium_rhum:
+    path: /alcools/rhums
+    controller: App\Controller\PremiumRhumController::index
+
+bateau_premium_rhum_item:
+    path: /alcools/rhums/{slug}
+    controller: App\Controller\PremiumRhumController::show
+    requirements:
+        name: '\w+'
+
+bateau_premium_gin:
+    path: /alcools/gins
+    controller: App\Controller\PremiumGinController::index
+
+bateau_premium_gin_item:
+    path: /alcools/gins/{slug}
+    controller: App\Controller\PremiumGinController::show
+    requirements:
+        name: '\w+'
+
+bateau_premium_vodka:
+    path: /alcools/vodkas
+    controller: App\Controller\PremiumVodkaController::index
+
+bateau_premium_vodka_item:
+    path: /alcools/vodkas/{slug}
+    controller: App\Controller\PremiumVodkaController::show
+    requirements:
+        name: '\w+'
+
+bateau_premium_tequila:
+    path: /alcools/vodkas
+    controller: App\Controller\PremiumVodkaController::index
+
+bateau_premium_tequila_item:
+    path: /alcools/tequilas/{slug}
+    controller: App\Controller\PremiumTequilaController::show
+    requirements:
+        name: '\w+'
+
+bateau_premium_whisky:
+    path: /alcools/whiskys
+    controller: App\Controller\PremiumWhiskyController::index
+
+bateau_premium_whisky_item:
+    path: /alcools/whiskys/{slug}
+    controller: App\Controller\PremiumWhiskyController::show
+    requirements:
+        name: '\w+'
+
+bateau_premium_digestif:
+    path: /alcools/digestifs
+    controller: App\Controller\PremiumDigestifController::index
+
+bateau_premium_digestif_item:
+    path: /alcools/digestifs/{slug}
+    controller: App\Controller\PremiumDigestifController::show
     requirements:
         name: '\w+'
 
 bateau_cocktails:
     path: /cocktails/
-    controller: App\Controller\CocktailController::show
+    controller: App\Controller\CocktailController::index
 
 bateau_cocktail_item:
-    path: /cocktails/{name}
-    controller: App\Controller\CocktailController::item
+    path: /cocktails/{slug}
+    controller: App\Controller\CocktailController::show
     requirements:
         name: '\w+'
-
 
 bateau_draftbeers:
     path: /drafts/
-    controller: App\Controller\DraftController::show
+    controller: App\Controller\DraftController::index
 
 bateau_draftbeer_item:
-    path: /drafts/{name}
-    controller: App\Controller\DraftController::item
+    path: /drafts/{slug}
+    controller: App\Controller\DraftController::show
     requirements:
         name: '\w+'
-
 
 bateau_events:
     path: /events/
-    controller: App\Controller\EventController::show
+    controller: App\Controller\EventController::index
 
 bateau_event_item:
-    path: /events/{name}
-    controller: App\Controller\EventController::item
+    path: /events/{slug}
+    controller: App\Controller\EventController::show
     requirements:
         name: '\w+'
-
 
 bateau_foods:
     path: /food/
-    controller: App\Controller\FoodController::show
+    controller: App\Controller\FoodController::index
 
 bateau_food_item:
-    path: /food/{name}
-    controller: App\Controller\FoodController::item
+    path: /food/{slug}
+    controller: App\Controller\FoodController::show
     requirements:
         name: '\w+'
-
 
 bateau_photos:
     path: /photos/
-    controller: App\Controller\PhotoController::show
+    controller: App\Controller\PhotoController::index
 
 bateau_photo_item:
-    path: /photos/{name}
-    controller: App\Controller\PhotoController::item
+    path: /photos/{slug}
+    controller: App\Controller\PhotoController::show
     requirements:
         name: '\w+'
-
 
 bateau_rums:
     path: /rums/
-    controller: App\Controller\RumController::show
+    controller: App\Controller\RumController::index
 
 bateau_rum_item:
-    path: /alcools/{name}
-    controller: App\Controller\RumController::item
+    path: /alcools/{slug}
+    controller: App\Controller\RumController::show
     requirements:
         name: '\w+'
-
 
 bateau_shots:
     path: /shots/
-    controller: App\Controller\ShotController::show
+    controller: App\Controller\ShotController::index
 
 bateau_shot_item:
-    path: /shots/{name}
-    controller: App\Controller\ShotController::item
+    path: /shots/{slug}
+    controller: App\Controller\ShotController::show
     requirements:
         name: '\w+'
-
 
 bateau_softs:
     path: /softs/
-    controller: App\Controller\SoftController::show
+    controller: App\Controller\SoftController::index
 
 bateau_soft_item:
-    path: /softs/{name}
-    controller: App\Controller\SoftController::item
+    path: /softs/{slug}
+    controller: App\Controller\SoftController::show
     requirements:
         name: '\w+'
-
 
 bateau_wines:
     path: /wines/
-    controller: App\Controller\WineController::show
+    controller: App\Controller\WineController::index
 
 bateau_wine_item:
-    path: /wines/{name}
-    controller: App\Controller\WineController::item
+    path: /wines/{slug}
+    controller: App\Controller\WineController::show
     requirements:
         name: '\w+'
 
-
 bateau_archives:
     path: /archives/
-    controller: App\Controller\ArchiveController::show
+    controller: App\Controller\ArchiveController::index
 
 bateau_archive_item:
-    path: /archives/{name}
-    controller: App\Controller\ArchiveController::item
+    path: /archives/{slug}
+    controller: App\Controller\ArchiveController::show
     requirements:
         name: '\w+'
 
@@ -135,12 +180,12 @@ bateau_contact:
 
 bateau_infos:
     path: /legacy/
-    controller: App\Controller\LegacyController::show
+    controller: App\Controller\LegacyController::index
 
 bateau_newsletters:
     path: /newsletter/
-    controller: App\Controller\NewsController::show
+    controller: App\Controller\NewsController::index
 
 bateau_booking:
     path: /booking/
-    controller: App\Controller\BookingController::show
+    controller: App\Controller\BookingController::index

@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SoftController extends AbstractController
 {
-  public function show(SoftRepository $softRepository): Response
+  public function index(SoftRepository $softRepository): Response
   {
       $softs = $softRepository->findAll();
       return $this->render('app/menu/soft.html.twig', [
@@ -16,7 +16,7 @@ class SoftController extends AbstractController
           'products' => $softs,
       ]) ;  }
 
-  public function item(): Response
+  public function show(): Response
   {
     return new Response();
   }
