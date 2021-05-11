@@ -19,6 +19,7 @@ use App\Entity\PremiumRhum;
 use App\Entity\PremiumTequila;
 use App\Entity\PremiumVodka;
 use App\Entity\PremiumWhisky;
+use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -43,6 +44,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user', User::class);
         yield MenuItem::section();
 
         yield MenuItem::section('Nos produits');
