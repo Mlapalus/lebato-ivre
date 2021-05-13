@@ -2,20 +2,27 @@
 
 namespace App\EventSubscriber;
 
+use App\Entity\PremiumDigestif;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class EasyAdminSubscriber implements EventSubscriberInterface
 {
     private EntityManagerInterface $entityManager;
     private UserPasswordEncoderInterface $passwordEncoder;
+    private $slugger;
 
-    public function __construct(EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder)
-    {
+    public function __construct(
+        SluggerInterface $slugger,
+        EntityManagerInterface $entityManager, 
+        UserPasswordEncoderInterface $passwordEncoder
+        ) {
+        $this->slugger = $slugger;
         $this->entityManager = $entityManager;
         $this->passwordEncoder = $passwordEncoder;
     }
@@ -25,7 +32,22 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         return [
             BeforeEntityPersistedEvent::class => ['addUser'],
             BeforeEntityUpdatedEvent::class => ['updateUser'],
+
+            BeforeEntityPersistedEvent::class => ['setDigestifSlug'],
         ];
+    }
+
+    public function setDigestifSlug(BeforeEntityPersistedEvent $event)
+    {
+        $entity = $event->getEntityInstance();
+
+        if(!($entity instanceof PremiumDigestif))
+        {
+            return;
+        }
+
+        $slug = $this->slugger->slug($entity->getName());
+        $entity->setSlug($slug);
     }
 
     public function updateUser(BeforeEntityUpdatedEvent $event)
