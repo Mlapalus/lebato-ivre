@@ -2,6 +2,14 @@ bateau_admin:
     path: /admin
     controller: App\Controller\Admin\DashboardController::index
 
+bateau_login:
+    path: /login
+    controller: App\Controller\UserAuthenticatorController::login
+
+bateau_logout:
+    path: /logout
+    controller: App\Controller\Controller\UserAuthenticatorController::logout
+
 bateau_index:
     path: /
     controller: App\Controller\PresentationController::index

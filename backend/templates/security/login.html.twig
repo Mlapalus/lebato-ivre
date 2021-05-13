@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url( {{ asset('assets/images/bateau/service-slide1.jpg') }} );">
+	<h2 class="tit6 t-center">
+		LogIn
+	</h2>
+</section>
+
+<section
+	class="section-contact bg1-pattern p-t-90 p-b-113">
+	<div class="container">
+		<h3 class="tit7 t-center p-b-62 p-t-105">
+			Connectez-vous
+		</h3>
+
+<form method="post" class="wrap-form-reservation size22 m-l-r-auto">
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            Bonjour  {{ app.user.name }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-12">
+	        <label for="InputEmail"><span class="txt9">Email</span><label>
+            <div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                <input class="bo-rad-10 sizefull txt10 p-l-20 form-control" id="inputEmail"
+                        type="email" name="email" placeholder="Email" value="{{ last_username }}"
+                        required autofocus autocomplete="email">
+	        </div>
+        </div>
+        <div class="col-md-12">
+            <label for="inputPassword"><span class="txt9">Password</span></label>
+	        <div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                <input class="bo-rad-10 sizefull txt10 p-l-20 form-control" id="inputPassword" 
+                        type="password" name="password" placeholder="Password" 
+                        autocomplete="current-password" required>
+	        </div>
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				
+<div class="col-md-12">
+
+		<button type="submit" class="btn3 flex-c-m size36 txt11 trans-0-4">
+						Enregistrer
+		</button>
+        </div>
+	</div>
+</form>
+</section>
+{% endblock %}

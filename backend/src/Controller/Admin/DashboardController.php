@@ -47,35 +47,58 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user', User::class);
         yield MenuItem::section();
 
-        yield MenuItem::section('Nos produits');
-        yield MenuItem::subMenu('Nos Alcools');
-        yield MenuItem::linkToCrud('Nos Rhums', 'fa fa-glass-whiskey', PremiumRhum::class);
-        yield MenuItem::linkToCrud('Nos Whiskys', 'fa fa-glass-whiskey', PremiumWhisky::class);
-        yield MenuItem::linkToCrud('Nos Gins', 'fa fa-glass-whiskey', PremiumGin::class);
-        yield MenuItem::linkToCrud('Nos Digestifs', 'fa fa-glass-whiskey', PremiumDigestif::class);
-        yield MenuItem::linkToCrud('Nos Vodka', 'fa fa-glass-whiskey', PremiumVodka::class);
-        yield MenuItem::linkToCrud('Nos Tequilas', 'fa fa-glass-whiskey', PremiumTequila::class);
+        yield MenuItem::section('Nos produits')
+            ->setPermission('ROLE_ADMIN');
+        
+        yield MenuItem::subMenu('Nos Alcools')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Nos Rhums', 'fa fa-glass-whiskey', PremiumRhum::class)
+                ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Nos Whiskys', 'fa fa-glass-whiskey', PremiumWhisky::class)
+                ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Nos Gins', 'fa fa-glass-whiskey', PremiumGin::class)
+                ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Nos Digestifs', 'fa fa-glass-whiskey', PremiumDigestif::class)
+                ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Nos Vodka', 'fa fa-glass-whiskey', PremiumVodka::class)
+                ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Nos Tequilas', 'fa fa-glass-whiskey', PremiumTequila::class)
+                ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Cocktails');
-        yield MenuItem::linkToCrud('Liste de nos Cocktails','fa fa-cocktail',Cocktail::class);
+        yield MenuItem::subMenu('Nos Cocktails')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos Cocktails','fa fa-cocktail',Cocktail::class)
+            ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Bières Pressions');
-        yield MenuItem::linkToCrud('Liste de nos Bières Pression','fa fa-beer',DraftBeer::class);
+        yield MenuItem::subMenu('Nos Bières Pressions')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos Bières Pression','fa fa-beer',DraftBeer::class)
+            ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Rhums arrangés');
-        yield MenuItem::linkToCrud('Liste de nos Rhums Arrangés', 'fa fa-flask', Rum::class);
+        yield MenuItem::subMenu('Nos Rhums arrangés')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos Rhums Arrangés', 'fa fa-flask', Rum::class)
+            ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Plats ');
-        yield MenuItem::linkToCrud('Liste de nos plats','fa fa-hotdog',Food::class);
+        yield MenuItem::subMenu('Nos Plats ')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos plats','fa fa-hotdog',Food::class)
+            ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Shots');
-        yield MenuItem::linkToCrud('La liste de nos Shots','fa fa-glass',Shot::class);
+        yield MenuItem::subMenu('Nos Shots')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('La liste de nos Shots','fa fa-glass',Shot::class)
+            ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Boissons sans alcools');
-        yield MenuItem::linkToCrud('Liste des Softs','fa fa-mug-hot',Soft::class);
+        yield MenuItem::subMenu('Nos Boissons sans alcools')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste des Softs','fa fa-mug-hot',Soft::class)
+            ->setPermission('ROLE_ADMIN');
 
-        yield MenuItem::subMenu('Nos Vins');
-        yield MenuItem::linkToCrud('Liste de nos Vins','fa fa-wine-glass-alt',Wine::class);
+        yield MenuItem::subMenu('Nos Vins')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos Vins','fa fa-wine-glass-alt',Wine::class)
+            ->setPermission('ROLE_ADMIN');
 
         yield MenuItem::section('Gestion des évenements');
         yield MenuItem::linkToCrud('Nos Archives','fa fa-home',Archive::class);
