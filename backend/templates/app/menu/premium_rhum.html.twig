@@ -1,8 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-
-	<h1>Rhums</h1>
-
+	{{ include('app/fragments/products/_body-premium.html.twig',
+		{
+			title_body:  title ,
+			image: asset("assets/images/dayso-295_vM4QO4c-unsplash.jpg"),
+			items:  products
+		})
+	}}
 {% endblock %}

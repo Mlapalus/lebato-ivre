@@ -1,8 +1,12 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-
-	<h1>Vodkas</h1>
-
+	{{ include('app/fragments/products/_body-premium.html.twig',
+		{
+			title_body:  title ,
+			image: asset("assets/images/woody-kelly-tKU_hsf5t9o-unsplash.jpg"),
+			items:  products
+		})
+	}}
 {% endblock %}
+

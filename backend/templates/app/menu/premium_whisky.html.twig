@@ -1,8 +1,12 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-
-	<h1>Whiskys</h1>
-
+	{{ include('app/fragments/products/_body-premium.html.twig',
+		{
+			title_body:  title ,
+			image: asset("assets/images/omid-armin-QVvq5VvMlU4-unsplash.jpg"),
+			items:  products
+		})
+	}}
 {% endblock %}
+

@@ -1,8 +1,12 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-
-	<h1>Gins</h1>
-
+	{{ include('app/fragments/products/_body-premium.html.twig',
+		{
+			title_body:  title ,
+			image: asset("assets/images/louis-hansel-GKo0ca66O5U-unsplash.jpg"),
+			items:  products
+		})
+	}}
 {% endblock %}
+
