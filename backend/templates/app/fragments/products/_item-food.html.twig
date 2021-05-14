@@ -11,16 +11,9 @@
 								</a>
 								<div class="line-item-mainmenu bg3-pattern"></div>
 								<div class="price-item-mainmenu txt22">
-									{% if happyhour %}
-										{{ item.priceHH / 100 | number_format(2) }}&#8364 /
-									{% endif %}
 									{{ item.price / 100 | number_format(2) }}&#8364
 								</div>
 							</div>
-							<span class="info-item-mainmenu txt23">
-								Pour un verre de
-								{{ item.quantity }} cl
-							</span>
 						</div>
 					{% endfor %}
 				</div>

@@ -53,8 +53,8 @@ bateau_premium_vodka_item:
         name: '\w+'
 
 bateau_premium_tequila:
-    path: /alcools/vodkas
-    controller: App\Controller\PremiumVodkaController::index
+    path: /alcools/tequila
+    controller: App\Controller\PremiumTequilaController::index
 
 bateau_premium_tequila_item:
     path: /alcools/tequilas/{slug}
