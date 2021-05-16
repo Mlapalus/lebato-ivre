@@ -2,18 +2,30 @@
 namespace App\Controller;
 
 use App\Repository\WineRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\RedWineRepository;
+use App\Repository\RoseWineRepository;
+use App\Repository\WhiteWineRepository;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class WineController extends AbstractController
 {
-  public function index(WineRepository $winerepository): Response
+  public function index(
+    RedWineRepository $redWineRepository,
+    RoseWineRepository $roseWineRepository,
+    WhiteWineRepository $whiteWineRepository
+    ): Response
   {
-      $wines = $winerepository->findAll();
+      $whiteWines = $whiteWineRepository->findAll();
+      $redWines = $redWineRepository->findAll();
+      $roseWines = $whiteWineRepository->findAll();
+
       return $this->render('app/menu/wine.html.twig', [
           'happyhour'=> false,
           'title' => "Nos Vins",
-          'products' => $wines,
+          'whiteWines' => $whiteWines,
+          'redWines' => $redWines,
+          'roses' => $roseWines
       ]) ;  }
 
   public function show(): Response

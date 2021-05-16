@@ -1,4 +1,5 @@
 /backend/vendor
 /backend/var
 /backend/.env.dev.local
+/backend/.env
 

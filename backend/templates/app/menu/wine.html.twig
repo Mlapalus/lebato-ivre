@@ -1,11 +1,13 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	{{ include('app/fragments/products/_body.html.twig',
+	{{ include('app/fragments/products/_body-wine.html.twig',
 		{
 			title_body:  title ,
 			image: asset("assets/images/kim-woojeong-Bh-vfPXVdiQ-unsplash.jpg"),
-			items:  products ,
+			white_items:  whiteWines ,
+			red_items:  redWines ,
+			rose_items:  roseWines ,
 			happyhour: happyhour
 		})
 	}}

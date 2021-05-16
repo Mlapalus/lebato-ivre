@@ -6,20 +6,21 @@ use App\Entity\Rum;
 use App\Entity\Food;
 use App\Entity\Shot;
 use App\Entity\Soft;
-use App\Entity\Wine;
+use App\Entity\User;
 use App\Entity\Event;
 use App\Entity\Photo;
-use App\Entity\Alcools;
 use App\Entity\Archive;
+use App\Entity\RedWine;
 use App\Entity\Cocktail;
+use App\Entity\RoseWine;
 use App\Entity\DraftBeer;
-use App\Entity\PremiumDigestif;
+use App\Entity\WhiteWine;
 use App\Entity\PremiumGin;
 use App\Entity\PremiumRhum;
-use App\Entity\PremiumTequila;
 use App\Entity\PremiumVodka;
 use App\Entity\PremiumWhisky;
-use App\Entity\User;
+use App\Entity\PremiumTequila;
+use App\Entity\PremiumDigestif;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -97,8 +98,13 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::subMenu('Nos Vins')
             ->setPermission('ROLE_ADMIN');
-        yield MenuItem::linkToCrud('Liste de nos Vins','fa fa-wine-glass-alt',Wine::class)
+        yield MenuItem::linkToCrud('Liste de nos Vins Blancs','fa fa-wine-glass-alt',WhiteWine::class)
             ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos Vins Rouges', 'fa fa-wine-glass-alt', RedWine::class)
+        ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Liste de nos Vins Rosés', 'fa fa-wine-glass-alt', RoseWine::class)
+            ->setPermission('ROLE_ADMIN');
+    
 
         yield MenuItem::section('Gestion des évenements');
         yield MenuItem::linkToCrud('Nos Archives','fa fa-home',Archive::class);
