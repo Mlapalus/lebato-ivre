@@ -4,47 +4,32 @@
 	<section class="section-event">
 		<div class="wrap-slick2">
 			<div class="slick2">
+
 				<div class="item-slick2 item1-slick2"
 					 style="background-image: url({{ asset('assets/images/bateau/bouteilles-slide1.jpg') }});">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
-							<!-- - -->
 							<div class="title-event t-center m-b-52">
-								<span class="tit2 p-l-15 p-r-15">
-									Nos Prochains Evenements
-								</span>
+								<span class="tit2 p-l-15 p-r-15">Nos Prochains Evenements</span>
 							</div>
-
-							<!-- Block2 -->
-							<div
-								class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
-								<!-- Pic block2 -->
+							<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
 								<a href="#" class="wrap-pic-blo2 bg1-blo2"
 								   style="background-image: url({{ asset('assets/images/bateau/escalier.jpg') }});">
 									<div class="time-event size10 txt6 effect1">
 										<span class="txt-effect1 flex-c-m t-center">
-											16:00 Mercredi - 19 Mai 2021
+											{{ events[0].organiezOn|date("d/m/Y") }}
 										</span>
 									</div>
 								</a>
-
-								<!-- Text block2 -->
 								<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
 									<h4 class="tit7 t-center m-b-10">
-										Ouverture
+										{{ events[0].name }}
 									</h4>
-
-									<p class="t-center">
-										Enfin, nous pouvons rouvrir le Bateau Ivre. On est impatient de vous revoir
-									</p>
-
+									<p class="t-center">{{ events[0].description }}</p>
 									<div class="flex-sa-m flex-w w-full m-t-40">
 										<div class="size11 flex-col-c-m">
 											<span class="dis-block t-center txt7 m-b-2">
-												8
-											</span>
-											<span class="dis-block t-center txt8">
-												Jours
+												{{ events[0].organiezOn|date("d/m/Y") }}
 											</span>
 										</div>
 									</div>
@@ -58,44 +43,27 @@
 					 style="background-image: url({{ asset('assets/images/bateau/soirée-slide1.jpg') }});">
 					<div class="wrap-content-slide2 p-t-115 p-b-208">
 						<div class="container">
-							<!-- - -->
 							<div class="title-event t-center m-b-52">
-								<span class="tit2 p-l-15 p-r-15">
-									Nos prochains Evenements
-								</span>
-
-							<!-- Block2 -->
-							<div
-								class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false"
-								data-appear="fadeInDown">
-								<!-- Pic block2 -->
-								<a href="#" class="wrap-pic-blo2 bg2-blo2"
-								   style="background-image: url({{ asset('assets/images/bateau/rhum1.jpg') }});">
-									<div class="time-event size10 txt6 effect1">
-										<span class="txt-effect1 flex-c-m">
-											16h  Jeudi - 10 Juin 2021
-										</span>
-									</div>
-								</a>
-
-								<!-- Text block2 -->
-								<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
-									<h4 class="tit7 t-center m-b-10">
-										Coupe d'Europe de Football
-									</h4>
-
-									<p class="t-center">
-										Elle devait avoir lieu l'année dernière, elle arrive cette année. Tous derrière la France, ou le pays que vous voulez !!
-									</p>
-
-									<div class="flex-sa-m flex-w w-full m-t-40">
-										<div class="size11 flex-col-c-m">
-											<span class="dis-block t-center txt7 m-b-2">
-												29
-											</span>
-											<span class="dis-block t-center txt8">
-												Jours
-											</span>
+								<span class="tit2 p-l-15 p-r-15">Nos prochains Evenements</span>
+								<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false"
+											data-appear="fadeInDown">
+									<a href="#" class="wrap-pic-blo2 bg2-blo2"
+								   			style="background-image: url({{ asset('assets/images/bateau/deco1.jpg') }});">
+										<div class="time-event size10 txt6 effect1">
+											<span class="txt-effect1 flex-c-m">{{ events[1].organiezOn|date("d/m/Y") }}</span>
+										</div>
+									</a>
+									<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+										<h4 class="tit7 t-center m-b-10">
+											{{ events[1].name }}
+										</h4>
+										<p class="t-center">{{ events[1].description }}</p>
+										<div class="flex-sa-m flex-w w-full m-t-40">
+											<div class="size11 flex-col-c-m">
+												<span class="dis-block t-center txt7 m-b-2">
+													{{ events[1].organiezOn|date("d/m/Y") }}
+												</span>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -103,7 +71,40 @@
 						</div>
 					</div>
 				</div>
+
+
+<div class="item-slick2 item3-slick2" style="url({{ asset('assets/images/adam-wilson-6UIonphZA5o-unsplash.jpg') }})">
+
+	<div class="wrap-content-slide2 p-t-115 p-b-208">
+		<div class="container">
+			<div class="title-event t-center m-b-52">
+				<span class="tit2 p-l-15 p-r-15">Nos Prochains Evenements</span>
 			</div>
+			<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="rotateInUpLeft">
+				<a href="#" class="wrap-pic-blo2 bg3-blo2" style="background-image: url({{ asset('assets/images/bateau/deco1.jpg')}});">
+					<div class="time-event size10 txt6 effect1">
+						<span class="txt-effect1 flex-c-m">
+							{{ events[2].organiezOn|date("d/m/Y") }}
+						</span>
+					</div>
+				</a>
+				<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+					<h4 class="tit7 t-center m-b-10">{{ events[2].name }}</h4>
+					<p class="t-center"> {{ events[2].description }}</p>
+
+					<div class="flex-sa-m flex-w w-full m-t-40">
+						<div class="size11 flex-col-c-m">
+							<span class="dis-block t-center txt7 m-b-2">
+								{{ events[2].organiezOn|date("d/m/Y") }}
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 			<div class="wrap-slick2-dots"></div>
 		</div>
 	</section>
