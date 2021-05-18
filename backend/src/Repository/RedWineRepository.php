@@ -37,7 +37,7 @@ class RedWineRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?WhiteWine
+    public function findOneBySomeField($value): ?RedWine
     {
         return $this->createQueryBuilder('w')
             ->andWhere('w.exampleField = :val')

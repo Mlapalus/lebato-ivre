@@ -6,7 +6,7 @@ use App\Repository\RedWineRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=WhiteWineRepository::class)
+ * @ORM\Entity(repositoryClass=RoseWineRepository::class)
  */
 class RedWine
 {

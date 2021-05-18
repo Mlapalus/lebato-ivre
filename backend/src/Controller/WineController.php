@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 
-use App\Repository\WineRepository;
 use App\Repository\RedWineRepository;
 use App\Repository\RoseWineRepository;
 use App\Repository\WhiteWineRepository;
@@ -14,19 +13,19 @@ class WineController extends AbstractController
     RedWineRepository $redWineRepository,
     RoseWineRepository $roseWineRepository,
     WhiteWineRepository $whiteWineRepository
-    ): Response
-  {
+    ): Response {
       $whiteWines = $whiteWineRepository->findAll();
       $redWines = $redWineRepository->findAll();
-      $roseWines = $whiteWineRepository->findAll();
+      $roseWines = $roseWineRepository->findAll();
 
       return $this->render('app/menu/wine.html.twig', [
           'happyhour'=> false,
           'title' => "Nos Vins",
           'whiteWines' => $whiteWines,
           'redWines' => $redWines,
-          'roses' => $roseWines
-      ]) ;  }
+          'roseWines' => $roseWines
+      ]);  
+    }
 
   public function show(): Response
   {

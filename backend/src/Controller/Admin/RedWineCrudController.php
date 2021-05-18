@@ -25,7 +25,9 @@ class RedWineCrudController extends AbstractCrudController
             MoneyField::new('glassPrice')
             ->setCurrency('EUR'),
             MoneyField::new('bottlePrice')
-            ->setCurrency('EUR')
+            ->setCurrency('EUR'),
+            TextField::new('color'),
+
         ];
     }
 }
